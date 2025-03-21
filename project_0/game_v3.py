@@ -15,8 +15,10 @@ def game_core_v3(number: int=1) -> int:
     a, b = 1, 101 # Определяем стратовые границы поиска от 1 до 100
     predict = np.random.randint(a, b) # Выбираем число
 
-    while number != predict: # Выполняем цикл пока числа загаданное и случайное не совпадут
+    while True: # Выполняем цикл пока числа загаданное и случайное не совпадут
         count += 1
+        if number == predict:
+            break
         if number > predict:
             a = predict + 1
         elif number < predict:
